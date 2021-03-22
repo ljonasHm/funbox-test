@@ -1,7 +1,5 @@
 'use strict';
 
-let path = require('path');
-
 module.exports = {
     mode: 'development',
     entry: './src/script.js',
@@ -11,5 +9,13 @@ module.exports = {
     },
     watch: true,
 
-    module: {}
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader'
+            }
+        ]
+    }
 };
